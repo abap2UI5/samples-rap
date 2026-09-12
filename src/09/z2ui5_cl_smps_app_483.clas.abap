@@ -84,7 +84,7 @@ CLASS z2ui5_cl_smps_app_483 IMPLEMENTATION.
             )->tag( `Button`
                 )->a( n = `press`   v = client->follow_up_action( client->cs_event-cross_app_nav_to_prev_app )
                 )->a( n = `text`    v = `back to the previous app`
-                )->a( n = `visible` v = client->get( )-check_launchpad_active
+                )->a( n = `visible` b = client->get( )-check_launchpad_active
             )->tag( `Button`
                 )->a( n = `press`   v = client->follow_up_action(
                     val   = client->cs_event-cross_app_nav_to_ext
@@ -92,7 +92,7 @@ CLASS z2ui5_cl_smps_app_483 IMPLEMENTATION.
                         ( `{ semanticObject: "Z2UI5_CL_LP_SAMPLE_04",  action: "display" }` )
                         ( `$` && client->_bind( nav_params ) ) ) )
                 )->a( n = `text`    v = `navigate to the receiver app`
-                )->a( n = `visible` v = client->get( )-check_launchpad_active ).
+                )->a( n = `visible` b = client->get( )-check_launchpad_active ).
 
     client->view_display( view->stringify( ) ).
 
