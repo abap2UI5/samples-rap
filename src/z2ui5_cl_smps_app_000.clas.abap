@@ -443,7 +443,7 @@ CLASS z2ui5_cl_smps_app_000 IMPLEMENTATION.
         )->a( n = `press`   v = client->_event_nav_app_leave( ) ).
 
     left->tag( `Title`
-        )->a( n = `text`  v = title
+        )->a( n = `text`  t = title
         )->a( n = `level` v = `H2` ).
 
     DATA(right) = bar->ele( `contentRight` ).
@@ -512,7 +512,7 @@ CLASS z2ui5_cl_smps_app_000 IMPLEMENTATION.
         )->a( n = `xmlns:core` v = `sap.ui.core`
 
         )->ele( `Popover`
-            )->a( n = `title`        v = |{ name } - not installed|
+            )->a( n = `title`        t = |{ name } - not installed|
             )->a( n = `placement`    v = `Bottom`
             )->a( n = `contentWidth` v = `26rem`
 
@@ -520,7 +520,7 @@ CLASS z2ui5_cl_smps_app_000 IMPLEMENTATION.
                 )->a( n = `class` v = `sapUiContentPadding`
 
                 )->tag( `Text`
-                    )->a( n = `text` v = |This system does not have { name } installed, so there is no app to | &&
+                    )->a( n = `text` t = |This system does not have { name } installed, so there is no app to | &&
                                          |jump to. Install the repository with abapGit, then this icon opens it right here.|
                 )->tag( `Link`
                     )->a( n = `text`   v = href
@@ -602,10 +602,10 @@ CLASS z2ui5_cl_smps_app_000 IMPLEMENTATION.
                                    ELSE `sapUiTinyMarginBeginEnd` ).
 
     toolbar->tag( n = `Icon` ns = `core`
-        )->a( n = `src`     v = icon
+        )->a( n = `src`     t = icon
         )->a( n = `size`    v = `1.125rem`
-        )->a( n = `class`   v = css_class
-        )->a( n = `tooltip` v = hint ).
+        )->a( n = `class`   t = css_class
+        )->a( n = `tooltip` t = hint ).
 
     " a( ) writes on the element just added, and an EMPTY attribute would be
     " rendered as one - id="" is not a control id, color="" is not a valid
@@ -613,11 +613,11 @@ CLASS z2ui5_cl_smps_app_000 IMPLEMENTATION.
     " added only when they carry something. The documentation and GitHub
     " entries have no class, and the entry you are standing on has no press.
     IF class IS NOT INITIAL.
-      toolbar->a( n = `id` v = class ).
+      toolbar->a( n = `id` t = class ).
     ENDIF.
 
     IF color IS NOT INITIAL.
-      toolbar->a( n = `color` v = color ).
+      toolbar->a( n = `color` t = color ).
     ENDIF.
 
     IF press IS NOT INITIAL.
@@ -644,14 +644,14 @@ CLASS z2ui5_cl_smps_app_000 IMPLEMENTATION.
     " collapsible: nine packages are a long page, and most readers came for
     " one of them
     DATA(panel) = page->ele( `Panel`
-        )->a( n = `headerText` v = title
+        )->a( n = `headerText` t = title
         )->a( n = `expandable` v = `true`
         )->a( n = `expanded`   v = `true`
         )->a( n = `width`      v = `auto`
         )->a( n = `class`      v = `sapUiSmallMarginBottom` ).
 
     panel->tag( `Text`
-        )->a( n = `text`  v = hint
+        )->a( n = `text`  t = hint
         )->a( n = `class` v = `sapUiSmallMarginBottom` ).
 
     DATA(table) = panel->ele( `Table`
