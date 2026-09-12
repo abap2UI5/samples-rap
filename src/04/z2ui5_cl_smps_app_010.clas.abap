@@ -443,7 +443,7 @@ CLASS z2ui5_cl_smps_app_010 IMPLEMENTATION.
             )->a( n = `xmlns:core` v = `sap.ui.core`
             )->a( n = `xmlns:form` v = `sap.ui.layout.form` ).
     DATA(dialog) = popup->ele( `Dialog`
-        )->a( n = `title`        v = |Edit Travel { s_draft-travel_id } (Draft)|
+        )->a( n = `title`        t = |Edit Travel { s_draft-travel_id } (Draft)|
         )->a( n = `contentWidth` v = `30rem` ).
 
     dialog->ele( n = `SimpleForm` ns = `form`
